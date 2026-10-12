@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "skills": {
+    "accessibility-audit": {
+      "source": "bh611627/skillcodex",
+      "sourceType": "github",
+      "skillPath": "skills/accessibility-audit/SKILL.md",
+      "computedHash": "cb22ded181fbb969e7eb59ef808b517b83aab1435bfe6082e64126403dc92d98"
+    },
+    "code-review": {
+      "source": "luongnv89/skills",
+      "sourceType": "github",
+      "skillPath": "skills/code-review/SKILL.md",
+      "computedHash": "15ddc1b08d865b599ffc987625f8f095d48e5ccfa7ba602439b667334370f5fc"
+    },
+    "react-code-review": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-kit-typescript/skills/react-code-review/SKILL.md",
+      "computedHash": "27b826f9a45f56387b0adf0890fbac8114525ed14561921e4a61428ebd027443"
+    },
+    "responsive-design": {
+      "source": "planetabhi/skills",
+      "sourceType": "github",
+      "skillPath": "skills/responsive-design/SKILL.md",
+      "computedHash": "9dadb8f0481bae2d59ad243365c047ab390751da16fed1a11eb1d98fc6f4c3ce"
+    },
+    "semantic-html-css": {
+      "source": "bh611627/skillcodex",
+      "sourceType": "github",
+      "skillPath": "skills/semantic-html-css/SKILL.md",
+      "computedHash": "e2cb9746d0033f624ec811d204db6e735f02d512f31efc0ce4022a31c5f8e304"
+    },
+    "seo-best-practices": {
+      "source": "mindrally/skills",
+      "sourceType": "github",
+      "skillPath": "seo-best-practices/SKILL.md",
+      "computedHash": "e77f986931bb80adb7fc7657db5a2c5b64dd733eb873f1f969880c8e9c9b8404"
+    },
+    "tailwind-css-patterns": {
+      "source": "giuseppe-trisciuoglio/developer-kit",
+      "sourceType": "github",
+      "skillPath": "plugins/developer-kit-typescript/skills/tailwind-css-patterns/SKILL.md",
+      "computedHash": "2fa1b2d4e0bc020dcbaa1e65af6f7ba75715116686e0fd663a4b268c8ace22d4"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "computedHash": "6b526d013e28073246a36f99b529bc43745d30832ecfa8217b359c34f260ca6b"
+    }
+  }
+}
