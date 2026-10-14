@@ -4,7 +4,29 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portafolio</title>
+    <title>Devfolio</title>
+    <script>
+      // Aplica el tema antes de crear la interfaz para reducir el destello de tema.
+      // Esta lógica es un reflejo de getInitialTheme() en src/hooks/useTheme.js.
+      // Si cambia una, debe cambiar la otra: misma clave "theme", mismos valores
+      // válidos ("dark" | "light") y mismo fallback a prefers-color-scheme.
+      try {
+        const savedTheme = localStorage.getItem("theme");
+        const systemPrefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme =
+          savedTheme === "dark" || savedTheme === "light"
+            ? savedTheme
+            : systemPrefersDark
+              ? "dark"
+              : "light";
+        document.documentElement.classList.toggle("dark", theme === "dark");
+        document.documentElement.style.colorScheme = theme;
+      } catch {
+        // Si localStorage no está disponible, la aplicación seguirá funcionando.
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -13,7 +13,7 @@ La aplicación usa una arquitectura basada en componentes con componentes reutil
 ## Estructura del proyecto
 
 ```
-porfolio/
+devfolio/
 ├── src/
 │   ├── assets/
 │   ├── components/
@@ -51,6 +51,9 @@ porfolio/
 - GitHub
 
 ## Características
+
+- Despliegue continuo con Vercel
+- Soporte para modo oscuro
 
 ## Requerimientos
 

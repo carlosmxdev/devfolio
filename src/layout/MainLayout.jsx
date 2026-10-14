@@ -2,10 +2,10 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/layouts/Header";
 import Footer from "../components/layouts/Footer";
 
-function MainLayout() {
+function MainLayout({ theme, onToggleTheme }) {
   return (
     <div className="flex min-h-screen flex-col supports-[min-height:100dvh]:min-h-dvh">
-      <Header />
+      <Header theme={theme} onToggleTheme={onToggleTheme} />
       <main className="flex-1">
         <Outlet />
       </main>
