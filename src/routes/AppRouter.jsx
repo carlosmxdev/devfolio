@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import MainLayout from "../layout/MainLayout";
 
 import Home from "../pages/Home";
@@ -11,12 +12,14 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<MainLayout />}>
+        <Route
+          element={<MainLayout />}
+        >
           {/* Ruta para páginas encontradas */}
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/acerca" element={<About />} />
+          <Route path="/proyectos" element={<Project />} />
+          <Route path="/contacto" element={<Contact />} />
           {/* Ruta para páginas no encontradas */}
           <Route path="*" element={<NotFound />} />
         </Route>
