@@ -2,7 +2,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-[#e2e8f0] bg-[#ffffffe6] py-7 text-center text-sm text-[#64748b] backdrop-blur-xl dark:border-[#1d293d] dark:bg-[#030712] dark:text-[#94a3b8]">
+    <footer className="border-t border-slate-200/80 bg-white/90 py-7 text-center text-sm text-slate-500 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/90 dark:text-slate-400">
       © {currentYear} carlosmxdev. Todos los derechos reservados.
     </footer>
   );

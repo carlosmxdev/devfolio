@@ -13,6 +13,7 @@ dist-ssr
 *.local
 
 # Editor directories and files
+.vscode/
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -23,8 +24,10 @@ dist-ssr
 *.sln
 *.sw?
 
-# SKILLS - Propmts - Reportes - AGENTS
+# SKILLS - Propmts - Reportes - AGENTS - ContextosRepomix
 .agents/
 audit-prompts/
 audits/
 AGENTS.md
+contextos-repomix/
+skills-lock.json
