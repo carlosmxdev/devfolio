@@ -30,4 +30,5 @@ audit-prompts/
 audits/
 AGENTS.md
 contextos-repomix/
+contextos-repomix/*
 skills-lock.json

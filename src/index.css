@@ -4,7 +4,7 @@
 
 @layer components {
   .focus-ring {
-    @apply transition-colors focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:focus-visible:ring-offset-gray-950;
+    @apply transition-colors focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:focus-visible:ring-offset-gray-950 dark:border-gray-900;
   }
 }
 
