@@ -1,22 +1,22 @@
-import { CodeXml, GraduationCap, UserGroup } from "lucide-react";
+import { Layers, FolderTree, LaptopMinimal, Trophy } from "lucide-react";
 
 export const competencies = [
   {
     id: 1,
-    Icon: CodeXml,
-    title: "Desarrollo Backend",
-    description: "Python",
+    Icon: FolderTree,
+    title: "Proyectos",
+    description: "+7 desarrollados",
   },
   {
     id: 2,
-    Icon: GraduationCap,
-    title: "Trabajo en equipo",
-    description: "Comunicación y colaboración efectiva",
+    Icon: LaptopMinimal,
+    title: "Experiencia práctica",
+    description: "Proyectos y estadías",
   },
   {
     id: 3,
-    Icon: UserGroup,
-    title: "Aprendizaje continuo",
-    description: "Siempre abierto a nuevas tecnologías",
+    Icon: Trophy,
+    title: "Meta",
+    description: "Impactar con tecnología",
   },
 ];
