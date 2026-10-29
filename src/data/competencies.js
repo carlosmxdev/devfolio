@@ -1,11 +1,11 @@
-import { Layers, FolderTree, LaptopMinimal, Trophy } from "lucide-react";
+import { FolderTree, LaptopMinimal, Trophy } from "lucide-react";
 
 export const competencies = [
   {
     id: 1,
     Icon: FolderTree,
     title: "Proyectos",
-    description: "+7 desarrollados",
+    description: "+7 desarrollos personales",
   },
   {
     id: 2,
