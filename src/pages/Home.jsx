@@ -1,18 +1,41 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 import { Sparkles, MoveUpRight, Download } from "lucide-react";
 
 import codeSetup from "../assets/images/coding-setup.webp";
 
+import { Particles } from "@/components/ui/particles";
+import { AuroraText } from "@/components/ui/aurora-text";
+
 function Home() {
+  const [isDark, setIsDark] = useState(() =>
+    document.documentElement.classList.contains("dark"),
+  );
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const color = isDark ? "#ffffff" : "#000000";
+
   return (
     <section className="px-8 py-5 sm:px-16 sm:py-10 xl:px-8 xl:py-5">
       {/* Contenedor del contenido principal y la imagen ilustrativa. */}
-      <div className="grid grid-cols-1 xl:grid-cols-[3fr_2fr]">
+      <div className="relative isolate z-10 grid grid-cols-1 overflow-hidden xl:grid-cols-[3fr_2fr]">
         {/* Contenedor de la información principal del hero. */}
         <div className="sm:mb-6 lg:mb-0">
           {/* Indicador de disponibilidad laboral. */}
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-sm font-medium text-violet-700 sm:text-base dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-sm font-medium text-violet-700 2xl:text-base dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
             {/* Icono decorativo que acompaña el indicador de disponibilidad. */}
             <Sparkles size={15} aria-hidden="true" />
 
@@ -23,10 +46,7 @@ function Home() {
           {/* Título principal de presentación profesional. */}
           <h1 className="mb-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl 2xl:text-7xl dark:text-white">
             Construyo soluciones backend escalables para
-            <span className="text-violet-600 dark:text-violet-400">
-              {" "}
-              productos digitales.
-            </span>
+            <AuroraText> productos digitales.</AuroraText>
           </h1>
 
           {/* Párrafo descriptivo sobre el enfoque profesional. */}
@@ -68,10 +88,19 @@ function Home() {
           <img
             src={codeSetup}
             alt=""
-            className="relative z-10 h-auto w-10/12 object-cover drop-shadow-[0_0_10px_rgba(127,34,254,1)] sm:w-9/12 lg:w-7/12 xl:w-8/12"
+            className="relative z-20 h-auto w-10/12 object-cover drop-shadow-[0_0_10px_rgba(127,34,254,1)] sm:w-9/12 lg:w-7/12 xl:w-8/12"
             decoding="async"
           />
         </div>
+
+        {/* Animación de particulas */}
+        <Particles
+          className="absolute inset-0 z-0"
+          quantity={100}
+          ease={80}
+          color={color}
+          refresh
+        />
       </div>
     </section>
   );
