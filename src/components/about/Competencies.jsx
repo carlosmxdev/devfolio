@@ -10,7 +10,7 @@ function Competencies() {
           <Icon
             size={30}
             aria-hidden="true"
-            className="shrink-0 text-violet-600 sm:text-base dark:text-violet-400"
+            className="shrink-0 text-violet-600 dark:text-violet-400"
           />
 
           {/* Contenedor del título y la descripción de la competencia. */}

@@ -6,7 +6,7 @@ function MainLayout({ theme, onToggleTheme }) {
   return (
     <div className="flex min-h-screen flex-col supports-[min-height:100dvh]:min-h-dvh">
       <Header theme={theme} onToggleTheme={onToggleTheme} />
-      <main className="bg-gray-100 dark:bg-gray-950">
+      <main className="bg-gray-100 dark:bg-gray-950 flex-1 items-center flex">
         <Outlet />
       </main>
       <Footer />
