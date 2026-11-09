@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { Sparkles, MoveUpRight, Download } from "lucide-react";
 
-import codeSetup from "../assets/images/coding-setup.webp";
+import IlustracionHome from "@/assets/images/IlustracionHome";
 
 import { Particles } from "@/components/ui/particles";
 import { AuroraText } from "@/components/ui/aurora-text";
@@ -29,11 +29,11 @@ function Home() {
   const color = isDark ? "#ffffff" : "#000000";
 
   return (
-    <section className="px-8 py-5 sm:px-16 sm:py-10 xl:px-8 xl:py-5">
+    <section className="relative isolate z-10 overflow-hidden px-8 py-5 sm:px-16 sm:py-10 xl:px-30 xl:py-10">
       {/* Contenedor del contenido principal y la imagen ilustrativa. */}
-      <div className="relative isolate z-10 grid grid-cols-1 overflow-hidden xl:grid-cols-[3fr_2fr]">
+      <div className="grid grid-cols-1">
         {/* Contenedor de la información principal del hero. */}
-        <div className="sm:mb-6 lg:mb-0">
+        <div className="flex flex-col items-center justify-center text-center sm:mb-6 lg:mb-0">
           {/* Indicador de disponibilidad laboral. */}
           <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-violet-200 bg-violet-50 px-3 py-1.5 text-sm font-medium text-violet-700 2xl:text-base dark:border-violet-400/20 dark:bg-violet-400/10 dark:text-violet-300">
             {/* Icono decorativo que acompaña el indicador de disponibilidad. */}
@@ -60,7 +60,7 @@ function Home() {
             {/* Enlace de navegación hacia la página de proyectos. */}
             <Link
               to="/proyectos"
-              className="focus-ring flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-base font-semibold text-white transition hover:bg-violet-700 sm:w-auto"
+              className="focus-ring flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-base font-semibold text-white transition hover:bg-violet-700 sm:w-auto sm:text-lg"
             >
               {/* Texto del enlace a proyectos. */}
               Ver proyectos
@@ -72,7 +72,7 @@ function Home() {
             <a
               href="#"
               download
-              className="focus-ring flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 px-5 py-3 text-base text-slate-800 transition hover:border-violet-200 hover:bg-violet-50 hover:text-violet-700 sm:w-auto sm:justify-normal dark:border-slate-700 dark:text-white dark:hover:border-violet-400/20 dark:hover:bg-violet-400/10 dark:hover:text-violet-300"
+              className="focus-ring flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 px-5 py-3 text-base text-slate-800 transition hover:border-violet-200 hover:bg-violet-50 hover:text-violet-700 sm:w-auto sm:justify-normal sm:text-lg dark:border-slate-700 dark:text-white dark:hover:border-violet-400/20 dark:hover:bg-violet-400/10 dark:hover:text-violet-300"
             >
               {/* Texto del enlace de descarga del currículum vitae. */}
               Descargar CV
@@ -83,25 +83,21 @@ function Home() {
         </div>
 
         {/* Contenedor de la imagen ilustrativa del hero. */}
-        <div className="relative flex items-center justify-center overflow-hidden">
+        <div className="mt-10 flex items-center justify-center overflow-hidden sm:mt-5 lg:mt-10">
           {/* Imagen representativa del entorno de desarrollo. */}
-          <img
-            src={codeSetup}
-            alt=""
-            className="relative z-20 h-auto w-10/12 object-cover drop-shadow-[0_0_10px_rgba(127,34,254,1)] sm:w-9/12 lg:w-7/12 xl:w-8/12"
-            decoding="async"
-          />
+          <IlustracionHome className="block h-auto w-9/12 lg:w-8/12 xl:w-7/12" />
         </div>
-
-        {/* Animación de particulas */}
-        <Particles
-          className="absolute inset-0 z-0"
-          quantity={100}
-          ease={80}
-          color={color}
-          refresh
-        />
       </div>
+
+      {/* Animación de particulas */}
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={100}
+        ease={80}
+        color={color}
+        size={1}
+        refresh
+      />
     </section>
   );
 }
