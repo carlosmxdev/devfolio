@@ -1,6 +1,7 @@
 import { Mail } from "lucide-react";
 
 import { Highlighter } from "@/components/ui/highlighter";
+import { Meteors } from "@/components/ui/meteors";
 
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import GithubIcon from "@/components/icons/GithubIcon";
@@ -9,8 +10,13 @@ import Form from "@/components/contact/form";
 
 function Contact() {
   return (
+    // Componente principal que contiene la sección de contacto y organiza su distribución en columnas según el tamaño de pantalla.
     <section className="mx-10 my-4 grid grid-cols-1 gap-10 sm:mx-14 sm:my-6 md:mx-16 md:my-8 lg:mx-20 lg:my-10 xl:mx-24 xl:my-12 xl:grid-cols-2">
-      <div>
+      {/* Contenedor que agrupa los elementos informativos y los medios de contacto. */}
+      <div className="relative isolate z-10 overflow-hidden">
+        {/* Efecto de meteoros limitado a este contenedor */}
+        <Meteors number={20} />
+
         {/* Etiqueta decorativa que identifica la sección actual. */}
         <span className="flex items-center gap-1 text-sm font-semibold text-violet-600 before:block before:h-0.5 before:w-5 before:bg-violet-600 before:content-[''] sm:text-base dark:text-violet-400 dark:before:bg-violet-400">
           03 / Contacto
@@ -26,7 +32,7 @@ function Contact() {
           ?
         </h1>
 
-        {/* Párrafo introductorio sobre la disponibilidad y el interés profesional. */}
+        {/* Párrafo introductorio que comunica la disponibilidad y el interés por nuevas oportunidades profesionales. */}
         <p className="mb-6 text-base leading-6 text-slate-600 sm:text-lg dark:text-slate-300">
           Si buscas un desarrollador comprometido, con ganas de aprender y
           pasión por la tecnología, me encantaría conocerte.
