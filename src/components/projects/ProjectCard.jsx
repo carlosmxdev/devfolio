@@ -26,18 +26,15 @@ function ProjectCard({ project }) {
           size={20}
         />
 
-        {/* Contenedor que alinea el enlace de acceso al proyecto. */}
-        <div className="flex justify-end">
-          {/* Enlace que permite acceder al proyecto presentado. */}
-          <a
-            href={project.link}
-            className="focus-ring inline-flex items-center gap-1 text-sm text-slate-600 hover:text-violet-600 sm:text-lg dark:text-slate-300 dark:hover:text-violet-400 mt-2"
-          >
-            Ver proyecto
-            {/* Icono que representa la acción de acceder al proyecto. */}
-            <ArrowRight aria-hidden="true" size={13} />
-          </a>
-        </div>
+        {/* Enlace que permite acceder al proyecto presentado. */}
+        <a
+          href={project.link}
+          className="focus-ring mt-3.5 flex items-center justify-end gap-1 text-sm text-slate-600 hover:text-violet-600 sm:text-lg dark:text-slate-300 dark:hover:text-violet-400"
+        >
+          Ver proyecto
+          {/* Icono que representa la acción de acceder al proyecto. */}
+          <ArrowRight aria-hidden="true" size={13} />
+        </a>
       </div>
     </article>
   );

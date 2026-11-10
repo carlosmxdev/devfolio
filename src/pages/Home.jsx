@@ -1,35 +1,18 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 import { Sparkles, MoveUpRight, Download } from "lucide-react";
 
 import IlustracionHome from "@/assets/images/IlustracionHome";
 
-import { Particles } from "@/components/ui/particles";
+import { Meteors } from "@/components/ui/meteors";
 import { AuroraText } from "@/components/ui/aurora-text";
 
 function Home() {
-  const [isDark, setIsDark] = useState(() =>
-    document.documentElement.classList.contains("dark"),
-  );
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDark(document.documentElement.classList.contains("dark"));
-    });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const color = isDark ? "#ffffff" : "#000000";
-
   return (
     <section className="relative isolate z-10 overflow-hidden px-8 py-5 sm:px-16 sm:py-10 xl:px-30 xl:py-10">
+      {/* Efecto de meteoros limitado a este contenedor */}
+      <Meteors number={20} />
+
       {/* Contenedor del contenido principal y la imagen ilustrativa. */}
       <div className="grid grid-cols-1">
         {/* Contenedor de la información principal del hero. */}
@@ -45,8 +28,8 @@ function Home() {
 
           {/* Título principal de presentación profesional. */}
           <h1 className="mb-4 text-3xl font-bold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl 2xl:text-7xl dark:text-white">
-            Construyo soluciones backend escalables para
-            <AuroraText> productos digitales.</AuroraText>
+            Construyo soluciones backend escalables para{" "}
+            <AuroraText>productos digitales</AuroraText>
           </h1>
 
           {/* Párrafo descriptivo sobre el enfoque profesional. */}
@@ -88,16 +71,6 @@ function Home() {
           <IlustracionHome className="block h-auto w-9/12 lg:w-8/12 xl:w-7/12" />
         </div>
       </div>
-
-      {/* Animación de particulas */}
-      <Particles
-        className="absolute inset-0 z-0"
-        quantity={100}
-        ease={80}
-        color={color}
-        size={1}
-        refresh
-      />
     </section>
   );
 }
