@@ -12,17 +12,16 @@ function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          element={<MainLayout />}
-        >
+        <Route element={<MainLayout />}>
           {/* Ruta para páginas encontradas */}
           <Route path="/" element={<Home />} />
           <Route path="/acerca" element={<About />} />
           <Route path="/proyectos" element={<Project />} />
           <Route path="/contacto" element={<Contact />} />
-          {/* Ruta para páginas no encontradas */}
-          <Route path="*" element={<NotFound />} />
         </Route>
+
+        {/* Ruta para páginas no encontradas */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
