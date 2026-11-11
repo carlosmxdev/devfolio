@@ -22,6 +22,7 @@ function ProjectCard({ project }) {
         {/* Componente que presenta las tecnologías y herramientas utilizadas en el proyecto. */}
         <IconBadgeList
           items={project.technologies}
+          labelKey="technology"
           className="text-xs sm:text-sm"
           size={20}
         />

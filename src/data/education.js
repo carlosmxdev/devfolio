@@ -11,16 +11,16 @@ export const education = [
   {
     id: 2,
     Icon: GraduationCap,
-    institution: "Universidad Tecnológica del Valle de Toluca",
-    degree:
-      "TSU En Tecnologías de la Información Área Desarrollo de Software Multiplataforma",
-    titled: "Titulado | 2023",
+    institution: "Colegio Nacional de Educación Profesional Técnica",
+    degree: "Profesional Técnico - Bachiller en Informática",
+    titled: "Titulado | 2020",
   },
   {
     id: 3,
     Icon: GraduationCap,
-    institution: "Colegio Nacional de Educación Profesional Técnica",
-    degree: "Profesional Técnico - Bachiller en Informática",
-    titled: "Titulado | 2020",
+    institution: "Universidad Tecnológica del Valle de Toluca",
+    degree:
+      "TSU En Tecnologías de la Información Área Desarrollo de Software Multiplataforma",
+    titled: "Titulado | 2023",
   },
 ];
