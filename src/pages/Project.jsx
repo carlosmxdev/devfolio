@@ -1,12 +1,13 @@
+import { useState } from "react";
+
 import { Meteors } from "@/components/ui/meteors";
 import { Highlighter } from "@/components/ui/highlighter";
-
-import { useState } from "react";
 
 import { projects } from "@/data/projects";
 
 import ProjectFilters from "@/components/projects/ProjectFilters";
 import ProjectCard from "@/components/projects/ProjectCard";
+import CtaGroup from "@/components/shared/CtaGroup";
 
 function Project() {
   // Estado que controla la categoría seleccionada para filtrar los proyectos.
@@ -40,14 +41,17 @@ function Project() {
         </h1>
 
         {/* Párrafo introductorio sobre los proyectos desarrollados. */}
-        <p className="mb-6 text-base leading-6 text-slate-600 sm:text-lg dark:text-slate-300">
+        <p className="mb-5 text-base leading-6 text-slate-600 sm:text-lg dark:text-slate-300">
           Aquí les muestro algunas cosas interesantes en las que he trabajado,
           ¡no duden en echarles un vistazo!
         </p>
+
+        {/* Componente que presenta los botones de navegación y descarga. */}
+        <CtaGroup />
       </div>
 
       {/* Contenedor de los filtros y las tarjetas de proyectos. */}
-      <div>
+      <div className="mt-5">
         {/* Componente que permite filtrar los proyectos según su categoría. */}
         <ProjectFilters
           activeCategory={activeCategory}

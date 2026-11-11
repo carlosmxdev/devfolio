@@ -30,6 +30,8 @@ function ProjectCard({ project }) {
         {/* Enlace que permite acceder al proyecto presentado. */}
         <a
           href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
           className="focus-ring mt-3.5 flex items-center justify-end gap-1 text-sm text-slate-600 hover:text-violet-600 sm:text-lg dark:text-slate-300 dark:hover:text-violet-400"
         >
           Ver proyecto

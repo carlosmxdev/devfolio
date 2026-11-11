@@ -7,6 +7,7 @@ import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import GithubIcon from "@/components/icons/GithubIcon";
 
 import Form from "../components/contact/Form";
+import CtaGroup from "@/components/shared/CtaGroup";
 
 function Contact() {
   return (
@@ -33,13 +34,16 @@ function Contact() {
         </h1>
 
         {/* Párrafo introductorio que comunica la disponibilidad y el interés por nuevas oportunidades profesionales. */}
-        <p className="mb-6 text-base leading-6 text-slate-600 sm:text-lg dark:text-slate-300">
+        <p className="mb-5 text-base leading-6 text-slate-600 sm:text-lg dark:text-slate-300">
           Si buscas un desarrollador comprometido, con ganas de aprender y
           pasión por la tecnología, me encantaría conocerte.
         </p>
 
+        {/* Componente que presenta los botones de navegación y descarga. */}
+        <CtaGroup />
+
         {/* Contenedor que agrupa los diferentes medios de contacto y redes profesionales. */}
-        <div className="flex flex-col gap-2.5">
+        <div className="mt-5 flex flex-col gap-2.5">
           {/* Contenedor de la dirección de correo electrónico. */}
           <div className="inline-flex items-center gap-2">
             {/* Icono representativo del correo electrónico. */}
