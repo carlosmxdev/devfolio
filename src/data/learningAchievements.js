@@ -1,6 +1,4 @@
 import AwardIcon from "../components/icons/Award";
-import certificadoPython from "../../public/certificado-santander-python.pdf";
-import certificadoAI from "../../public/certificado-iniciacion-al-desarrollo-con-AI.pdf";
 
 export const learningAchievements = [
   {
@@ -9,7 +7,7 @@ export const learningAchievements = [
     certificateName: "Curso de Desarrollo con IA Gratis",
     platform: "Rom ald Fons | Brais Moure",
     year: "| 2026",
-    linkCertificate: certificadoAI,
+    linkCertificate: "/certificado-iniciacion-al-desarrollo-con-AI.pdf",
   },
   {
     id: 2,
@@ -17,7 +15,7 @@ export const learningAchievements = [
     certificateName: "Python",
     platform: "Santander - Open Academy",
     year: "| 2026",
-    linkCertificate: certificadoPython,
+    linkCertificate: "/certificado-santander-python.pdf",
   },
   {
     id: 3,

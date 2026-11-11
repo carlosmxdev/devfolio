@@ -32,3 +32,8 @@ AGENTS.md
 contextos-repomix/
 contextos-repomix/*
 skills-lock.json
+
+
+.env
+.env.*
+!.env.example
