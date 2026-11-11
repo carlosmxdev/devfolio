@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Sparkles } from "lucide-react";
 
-import { Sparkles, MoveUpRight, Download } from "lucide-react";
-
-import IlustracionHome from "@/assets/images/IlustracionHome";
+import CtaGroup from "@/components/shared/CtaGroup";
 
 import { Meteors } from "@/components/ui/meteors";
 import { AuroraText } from "@/components/ui/aurora-text";
+
+import IlustracionHome from "@/assets/images/IlustracionHome";
 
 function Home() {
   return (
@@ -38,37 +38,17 @@ function Home() {
             posible grandes experiencias digitales.
           </p>
 
-          {/* Contenedor de los botones de navegación y descarga. */}
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-normal">
-            {/* Enlace de navegación hacia la página de proyectos. */}
-            <Link
-              to="/proyectos"
-              className="focus-ring flex w-full items-center justify-center gap-2 rounded-xl bg-violet-600 px-5 py-3 text-base font-semibold text-white transition hover:bg-violet-700 sm:w-auto sm:text-lg"
-            >
-              {/* Texto del enlace a proyectos. */}
-              Ver proyectos
-              {/* Icono decorativo que acompaña el enlace a proyectos. */}
-              <MoveUpRight size={18} aria-hidden="true" />
-            </Link>
-
-            {/* Enlace para descargar el currículum vitae. */}
-            <a
-              href="#"
-              download
-              className="focus-ring flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 px-5 py-3 text-base text-slate-800 transition hover:border-violet-200 hover:bg-violet-50 hover:text-violet-700 sm:w-auto sm:justify-normal sm:text-lg dark:border-slate-700 dark:text-white dark:hover:border-violet-400/20 dark:hover:bg-violet-400/10 dark:hover:text-violet-300"
-            >
-              {/* Texto del enlace de descarga del currículum vitae. */}
-              Descargar CV
-              {/* Icono decorativo que acompaña el enlace de descarga. */}
-              <Download size={18} aria-hidden="true" />
-            </a>
-          </div>
+          {/* Componente que presenta los botones de navegación y descarga. */}
+          <CtaGroup />
         </div>
 
         {/* Contenedor de la imagen ilustrativa del hero. */}
         <div className="mt-10 flex items-center justify-center overflow-hidden sm:mt-5 lg:mt-10">
           {/* Imagen representativa del entorno de desarrollo. */}
-          <IlustracionHome className="block h-auto w-9/12 lg:w-8/12 xl:w-7/12" />
+          <IlustracionHome
+            className="block h-auto w-9/12 lg:w-8/12 xl:w-7/12"
+            decoding="async"
+          />
         </div>
       </div>
     </section>

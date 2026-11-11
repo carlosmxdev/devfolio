@@ -17,6 +17,6 @@ export const projects = [
       { Icon: HtmlIcon, technology: "HTML5" },
     ],
     images: [portfolioB, portfolioW],
-    link: "https://devfolio-7cfsxut5v-carlosmxdev.vercel.app/",
+    link: "https://devfolio-lovat-theta.vercel.app/",
   },
 ];

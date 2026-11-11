@@ -44,6 +44,7 @@ function ProjectSlider({ images, title }) {
             currentImage === index ? "opacity-100" : "opacity-0"
           }`}
           loading="lazy"
+          decoding="async"
         />
       ))}
 

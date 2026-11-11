@@ -10,10 +10,10 @@ function ProjectFilters({ activeCategory, setActiveCategory }) {
         <button
           key={category}
           onClick={() => setActiveCategory(category)}
-          className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300 ${
+          className={`focus-ring rounded-full px-5 py-2 text-sm font-semibold transition-all duration-300 ${
             activeCategory === category
-              ? "focus-ring bg-violet-600 text-white"
-              : "focus-ring border-2 border-slate-300 p-3 text-slate-600 hover:border-violet-600 hover:text-violet-600 dark:border-slate-800 dark:text-slate-300 dark:hover:border-violet-400 dark:hover:text-violet-400"
+              ? " bg-violet-600 text-white"
+              : "border-2 border-slate-300 p-3 text-slate-600 hover:border-violet-600 hover:text-violet-600 dark:border-slate-800 dark:text-slate-300 dark:hover:border-violet-400 dark:hover:text-violet-400"
           }`}
         >
           {category}

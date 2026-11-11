@@ -3,6 +3,7 @@ import { Meteors } from "@/components/ui/meteors";
 import avatar from "@/assets/images/avatar-completo.webp";
 
 import Competencies from "../components/about/Competencies";
+import CtaGroup from "@/components/shared/CtaGroup";
 
 import { skills } from "@/data/skills";
 import IconBadgeList from "@/components/shared/IconBadgeList";
@@ -44,10 +45,13 @@ function About() {
             trabajar con bases de datos y encontrar formas de resolver problemas
             sin complicar las cosas más de lo necesario.
           </p>
+
+          {/* Componente que presenta los botones de navegación y descarga. */}
+          <CtaGroup />
         </div>
 
         {/* Contenedor que organiza y posiciona la imagen ilustrativa junto al texto de presentación. */}
-        <div className="flex items-center justify-center overflow-hidden lg:justify-end">
+        <div className="mt-5 flex items-center justify-center overflow-hidden lg:justify-end">
           {/* Imagen representativa del desarrollador utilizada en la presentación personal. */}
           <img
             src={avatar}
