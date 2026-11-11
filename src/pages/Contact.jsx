@@ -6,7 +6,7 @@ import { Meteors } from "@/components/ui/meteors";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import GithubIcon from "@/components/icons/GithubIcon";
 
-import Form from "../components/contact/Form";
+import Form from "@/components/contact/Form";
 
 function Contact() {
   return (
