@@ -19,7 +19,7 @@ function Contact() {
 
         {/* Etiqueta decorativa que identifica la sección actual. */}
         <span className="flex items-center gap-1 text-sm font-semibold text-violet-600 before:block before:h-0.5 before:w-5 before:bg-violet-600 before:content-[''] sm:text-base dark:text-violet-400 dark:before:bg-violet-400">
-          03 / Contacto
+          04 / Contacto
         </span>
 
         {/* Título principal de la sección. */}
