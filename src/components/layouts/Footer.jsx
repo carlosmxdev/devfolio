@@ -58,7 +58,7 @@ function Footer() {
       </div>
 
       {/* Aviso de derechos de autor. */}
-      <span className="text-center text-sm text-slate-600 dark:text-slate-300">
+      <span className="text-center text-sm text-slate-600 dark:text-slate-300 w-full sm:w-auto">
         © {currentYear} carlosmxdev. Todos los derechos reservados.
       </span>
 
