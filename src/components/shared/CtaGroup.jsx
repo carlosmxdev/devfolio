@@ -25,8 +25,8 @@ function CtaGroup() {
 
       {/* Enlace para descargar el currículum vitae. */}
       <a
-        href="/public/cv-cams.pdf"
-        download="CV-CAMS"
+        href="/cv-cams.pdf"
+        download="cv-cams.pdf"
         className="focus-ring flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 px-5 py-3 text-base text-slate-800 transition hover:border-violet-200 hover:bg-violet-50 hover:text-violet-700 sm:w-auto sm:justify-normal sm:text-lg dark:border-slate-700 dark:text-white dark:hover:border-violet-400/20 dark:hover:bg-violet-400/10 dark:hover:text-violet-300"
       >
         {/* Texto del enlace de descarga del currículum vitae. */}
