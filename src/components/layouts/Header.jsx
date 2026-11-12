@@ -5,6 +5,9 @@ import { Menu, Moon, Sun, X, ArrowRight } from "lucide-react";
 import { navigationItems } from "../../data/navigation";
 import { useTheme } from "../../hooks/useTheme";
 
+import logoClaro from "../../assets/devfolio-logo-w.svg";
+import logoOscuro from "../../assets/devfolio-logo-b.svg";
+
 // Función que genera las clases de los enlaces según su estado activo.
 const navLinkClasses = ({ isActive }) =>
   `focus-ring rounded-lg px-3 py-2 text-sm font-medium ${
@@ -75,9 +78,19 @@ function Header() {
           aria-label="Devfolio, ir al inicio"
           className="focus-ring rounded-lg text-xl font-black text-slate-950 dark:text-white"
         >
-          <span className="text-violet-600 dark:text-violet-400">&lt;</span>
-          devfolio
-          <span className="text-violet-600 dark:text-violet-400"> /&gt;</span>
+          {/* Logo para modo claro (se oculta en modo oscuro) */}
+          <img
+            src={logoClaro}
+            alt=""
+            className="block h-auto w-17 dark:hidden"
+          />
+
+          {/* Logo para modo oscuro (oculto por defecto, se muestra en modo oscuro) */}
+          <img
+            src={logoOscuro}
+            alt=""
+            className="hidden h-auto w-17 dark:block"
+          />
         </Link>
 
         {/* Menú de navegación principal para dispositivos de escritorio. */}
