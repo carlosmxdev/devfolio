@@ -8,7 +8,7 @@ import gato from "../assets/images/gato-404.webp";
 function NotFound() {
   return (
     // Contenedor principal de la página 404.
-    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-[#121821]">
+    <div className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-[#f8fafc] dark:bg-[#121821]">
       {/* Elementos SVG decorativos del fondo. */}
       <svg
         className="pointer-events-none absolute inset-0 -z-10 h-full w-full"
@@ -19,7 +19,7 @@ function NotFound() {
       >
         {/* Onda decorativa de la esquina superior izquierda. */}
         <path
-          className="fill-[#0f141c]"
+          className="fill-[#e2e8f0] dark:fill-[#0f141c]"
           d="
         M 0 0
         H 230
@@ -32,7 +32,7 @@ function NotFound() {
 
         {/* Onda decorativa de la esquina inferior derecha. */}
         <path
-          className="fill-[#0f141c]"
+          className="fill-[#e2e8f0] dark:fill-[#0f141c]"
           d="
         M 430 800
         C 470 775, 490 735, 535 710
