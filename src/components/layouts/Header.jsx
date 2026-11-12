@@ -82,14 +82,14 @@ function Header() {
           <img
             src={logoClaro}
             alt=""
-            className="block h-auto w-17 dark:hidden"
+            className="block h-auto w-13 sm:w-14 lg:w-15 xl:w-16 dark:hidden"
           />
 
           {/* Logo para modo oscuro (oculto por defecto, se muestra en modo oscuro) */}
           <img
             src={logoOscuro}
             alt=""
-            className="hidden h-auto w-17 dark:block"
+            className="hidden h-auto w-13 sm:w-14 lg:w-15 xl:w-16 dark:block"
           />
         </Link>
 
