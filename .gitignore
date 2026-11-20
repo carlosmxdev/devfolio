@@ -33,7 +33,17 @@ contextos-repomix/
 contextos-repomix/*
 skills-lock.json
 
-
+# Environment variables
 .env
 .env.*
 !.env.example
+
+# Vercel
+.vercel
+
+# Entorno
+.venv/
+__pycache__/
+*.py[cod]
+.vercel
+.env*
