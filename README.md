@@ -6,7 +6,7 @@ Portafolio profesional de desarrollador construido con React, Vite, React Router
 
 Este proyecto es un portfolio personal profesional diseñado para mostrar mi perfil, habilidades técnicas, proyectos e información de contacto.
 
-La aplicación usa una arquitectura basada en componentes con componentes reutilizables de React, enrutamiento del lado del cliente, HTML semántico e interfaz responsiva.
+La aplicación usa una arquitectura basada en componentes con componentes reutilizables de React, enrutamiento del lado del cliente, HTML semántico e interfaz responsiva y formulario de contacto.
 
 ## Demo
 
@@ -14,24 +14,28 @@ La aplicación usa una arquitectura basada en componentes con componentes reutil
 
 ```
 devfolio/
+├── api/
+├── server/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── services/
+│   ├── utils/
+│   └── validators/
 ├── src/
 │   ├── assets/
-│   ├── components/
+│   └── components/
+│       └── about/
+│       └── contact/
+│       └── icons/
 │       └── layouts/
-│           ├── Footer.jsx
-│           └── Header.jsx
-│
-│   ├── data/
+│       └── projects/
+│       └── shared/
+│       └── ui/
+│   ┌── data/
 │   ├── layout/
-│       └── MainLayout.jsx
 │   ├── pages/
-│       ├── About.jsx
-│       ├── Contact.jsx
-│       ├── Home.jsx
-│       ├── NotFound.jsx
-│       └── Project.jsx
 │   ├── routes/
-│       └── AppRouter.jsx
 │   ├── styles/
 │   ├── App.jsx
 │   ├── index.css
@@ -49,11 +53,21 @@ devfolio/
 - HTML5
 - CSS
 - GitHub
+- Node.js
+- Nodemailer
+- Zod
+- Upstash Redis
+- Honeypot
 
 ## Características
 
 - Despliegue continuo con Vercel
+- Diseño responsive
+- Formulario de contacto funcional
+- Navegación entre secciones
+- Navegación mediante React Router
 - Soporte para modo oscuro
+- Validación de dato
 
 ## Requerimientos
 
@@ -71,13 +85,13 @@ npm --version
 Clone the repository:
 
 ```bash
-git clone https://github.com/carlosmxdev/portfolio.git
+git clone https://github.com/carlosmxdev/devfolio.git
 ```
 
 Enter the project directory:
 
 ```bash
-cd portfolio
+cd devfolio
 ```
 
 Install dependencies:
