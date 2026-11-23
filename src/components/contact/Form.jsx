@@ -1,6 +1,4 @@
-
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
 import { Send, LoaderCircle } from "lucide-react";
 
 function Form() {
@@ -31,28 +29,36 @@ function Form() {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    // Parámetros que recibirá la plantilla de EmailJS.
-    const templateParams = {
-      user_email: formData.get("user_email"),
+    // Datos que recibirá nuestro backend.
+    const contactData = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
       message: formData.get("message"),
+      website: formData.get("website"),
     };
 
     try {
-      // Envía el correo mediante EmailJS.
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
-        {
-          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        }
-      );
+      // Envía los datos a nuestra API.
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contactData),
+      });
+
+      const result = await response.json();
+
+      // Comprueba si el backend rechazó la solicitud.
+      if (!response.ok) {
+        throw new Error(result.message || "No fue posible enviar el mensaje.");
+      }
 
       // Muestra el mensaje de éxito.
       setStatus({
         type: "success",
-        message:
-          "¡Mensaje enviado correctamente! Gracias por contactarme.",
+        message: "¡Mensaje enviado correctamente! Gracias por contactarme.",
       });
 
       // Limpia los campos después del envío exitoso.
@@ -65,6 +71,7 @@ function Form() {
       setStatus({
         type: "error",
         message:
+          error.message ||
           "No se pudo enviar el mensaje. Inténtalo nuevamente.",
       });
     } finally {
@@ -81,23 +88,75 @@ function Form() {
         </h2>
 
         <form onSubmit={handleSubmit}>
-          {/* Campo de correo electrónico. */}
+          {/* Campo Honeypot. */}
+          <div
+            aria-hidden="true"
+            className="absolute left-[-9999px] h-px w-px overflow-hidden"
+          >
+            <label htmlFor="website">No completar este campo</label>
+
+            <input
+              type="text"
+              id="website"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
+          {/* Campo del nombre. */}
           <div className="mb-5 flex flex-col justify-center gap-1">
-            <label
-              htmlFor="user_email"
-              className="text-base sm:text-lg"
-            >
+            <label htmlFor="name" className="text-base sm:text-lg">
+              Nombre
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Tu nombre"
+              required
+              minLength={2}
+              maxLength={80}
+              autoComplete="name"
+              disabled={isSending}
+              className="focus-ring rounded-md border-2 border-slate-300/80 bg-violet-50 p-1.5 text-base disabled:cursor-not-allowed disabled:opacity-60 sm:text-lg dark:border-slate-800 dark:bg-violet-400/10"
+            />
+          </div>
+
+          {/* Campo del correo electrónico. */}
+          <div className="mb-5 flex flex-col justify-center gap-1">
+            <label htmlFor="email" className="text-base sm:text-lg">
               Correo electrónico
             </label>
 
             <input
               type="email"
-              id="user_email"
-              name="user_email"
+              id="email"
+              name="email"
               placeholder="tucorreo@sitio.com"
               required
-              maxLength={100}
+              maxLength={254}
               autoComplete="email"
+              disabled={isSending}
+              className="focus-ring rounded-md border-2 border-slate-300/80 bg-violet-50 p-1.5 text-base disabled:cursor-not-allowed disabled:opacity-60 sm:text-lg dark:border-slate-800 dark:bg-violet-400/10"
+            />
+          </div>
+
+          {/* Campo del asunto. */}
+          <div className="mb-5 flex flex-col justify-center gap-1">
+            <label htmlFor="subject" className="text-base sm:text-lg">
+              Asunto
+            </label>
+
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Asunto del mensaje"
+              required
+              minLength={3}
+              maxLength={120}
               disabled={isSending}
               className="focus-ring rounded-md border-2 border-slate-300/80 bg-violet-50 p-1.5 text-base disabled:cursor-not-allowed disabled:opacity-60 sm:text-lg dark:border-slate-800 dark:bg-violet-400/10"
             />
@@ -105,10 +164,7 @@ function Form() {
 
           {/* Campo del mensaje. */}
           <div className="mb-5 flex flex-col justify-center gap-1">
-            <label
-              htmlFor="message"
-              className="text-base sm:text-lg"
-            >
+            <label htmlFor="message" className="text-base sm:text-lg">
               Mensaje
             </label>
 
@@ -118,7 +174,7 @@ function Form() {
               placeholder="Mensaje..."
               required
               minLength={10}
-              maxLength={3000}
+              maxLength={5000}
               rows={5}
               disabled={isSending}
               className="focus-ring w-full resize-y rounded-md border-2 border-slate-300/80 bg-violet-50 p-1.5 text-base disabled:cursor-not-allowed disabled:opacity-60 sm:text-lg dark:border-slate-800 dark:bg-violet-400/10"
@@ -157,11 +213,7 @@ function Form() {
               </>
             ) : (
               <>
-                <Send
-                  size={17}
-                  aria-hidden="true"
-                  className="shrink-0"
-                />
+                <Send size={17} aria-hidden="true" className="shrink-0" />
                 Enviar correo
               </>
             )}
