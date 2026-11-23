@@ -1,5 +1,6 @@
 const allowedOrigins = new Set([
   "https://devfolio-lovat-theta.vercel.app",
+  "http://localhost:3000",
   "http://localhost:5173",
 ]);
 
